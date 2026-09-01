@@ -1,0 +1,163 @@
+/* style.css — StudySprint */
+
+:root {
+  --paper: #F7F4EC;
+  --surface: #FFFFFF;
+  --ink: #24313D;
+  --ink-muted: #5B6B74;
+  --border: #E3DED0;
+  --amber: #E8A63D;
+  --amber-ink: #3A2A0A;
+  --teal: #2E7D6B;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, "Iowan Old Style", ui-serif, serif;
+  margin: 0 0 0.3em;
+  font-weight: 600;
+}
+
+/* Header */
+header {
+  padding: 2rem 1.5rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+header h1 { font-size: 1.9rem; }
+header p { margin: 0; color: var(--ink-muted); }
+
+/* Main layout: form on the left, sessions + stat on the right */
+main {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 1.5rem auto;
+  padding: 0 1.5rem;
+}
+
+main > section:nth-of-type(1) { grid-column: 1; grid-row: 1 / span 2; }
+main > section:nth-of-type(2) { grid-column: 2; grid-row: 1; }
+main > section:nth-of-type(3) { grid-column: 2; grid-row: 2; }
+
+section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.25rem 1.4rem;
+}
+
+section h2 {
+  font-size: 1rem;
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+
+/* Form */
+#study-form > div { margin-bottom: 1rem; }
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+  color: var(--ink-muted);
+}
+
+input {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.95rem;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+input:focus {
+  outline: 2px solid var(--teal);
+  outline-offset: 1px;
+  border-color: var(--teal);
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 0.7rem;
+  background: var(--amber);
+  color: var(--amber-ink);
+  border: none;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+button[type="submit"]:hover { background: #DB9A2E; }
+
+/* Session cards */
+#sessions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.session-card {
+  border-left: 3px solid var(--teal);
+  background: var(--paper);
+  padding: 0.7rem 0.9rem;
+  border-radius: 4px;
+}
+
+.session-card h3 {
+  font-size: 1rem;
+  margin: 0 0 0.15rem;
+}
+
+.session-card p {
+  margin: 0 0 0.3rem;
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+}
+
+.session-card span {
+  font-size: 0.8rem;
+  color: var(--teal);
+  font-weight: 600;
+}
+
+/* Total time stat */
+#total-time {
+  font-size: 2.4rem;
+  font-family: Georgia, ui-serif, serif;
+  color: var(--teal);
+  margin: 0;
+}
+
+footer {
+  text-align: center;
+  color: var(--ink-muted);
+  font-size: 0.85rem;
+  padding: 2rem 0;
+}
+
+/* Mobile: stack everything */
+@media (max-width: 700px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  main > section:nth-of-type(1),
+  main > section:nth-of-type(2),
+  main > section:nth-of-type(3) {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}

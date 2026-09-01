@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudySprint</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>📚 StudySprint</h1>
+        <p>Log your study sessions. See your daily total.</p>
+    </header>
+
+    <main>
+
+        <!-- Add Study Session -->
+        <section>
+            <h2>Add Study Session</h2>
+
+            <form id="study-form">
+
+                <div>
+                    <label for="subject">Subject</label>
+                    <input 
+                        type="text" 
+                        id="subject" 
+                        name="subject"
+                        placeholder="e.g. Data Structures"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="topic">Topic</label>
+                    <input 
+                        type="text" 
+                        id="topic" 
+                        name="topic"
+                        placeholder="e.g. Sorting Algorithms"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="duration">Duration (minutes)</label>
+                    <input 
+                        type="number" 
+                        id="duration" 
+                        name="duration"
+                        placeholder="e.g. 45"
+                        min="1"
+                        required
+                    >
+                </div>
+
+                <button type="submit">+ Add Session</button>
+
+            </form>
+        </section>
+
+
+        <!-- Today's Sessions -->
+        <section>
+            <h2>Today's Sessions</h2>
+
+            <div id="sessions-list">
+
+                <!-- Session 1 -->
+                <article class="session-card">
+                    <h3>📘 Data Structures</h3>
+                    <p>Sorting Algorithms</p>
+                    <span>45 minutes</span>
+                </article>
+
+                <!-- Session 2 -->
+                <article class="session-card">
+                    <h3>☕ Java</h3>
+                    <p>JDBC Basics</p>
+                    <span>30 minutes</span>
+                </article>
+
+                <!-- Session 3 -->
+                <article class="session-card">
+                    <h3>💻 Web Development</h3>
+                    <p>JavaScript Basics</p>
+                    <span>40 minutes</span>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- Total Study Time -->
+        <section>
+            <h2>Total Study Time</h2>
+
+            <p id="total-time">1h 55m</p>
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>StudySprint © 2026</p>
+    </footer>
+
+</body>
+</html>
