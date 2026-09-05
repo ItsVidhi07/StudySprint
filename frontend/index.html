@@ -25,9 +25,9 @@
 
                 <div>
                     <label for="subject">Subject</label>
-                    <input 
-                        type="text" 
-                        id="subject" 
+                    <input
+                        type="text"
+                        id="subject"
                         name="subject"
                         placeholder="e.g. Data Structures"
                         required
@@ -36,25 +36,37 @@
 
                 <div>
                     <label for="topic">Topic</label>
-                    <input 
-                        type="text" 
-                        id="topic" 
+                    <input
+                        type="text"
+                        id="topic"
                         name="topic"
                         placeholder="e.g. Sorting Algorithms"
                         required
                     >
                 </div>
 
-                <div>
-                    <label for="duration">Duration (minutes)</label>
-                    <input 
-                        type="number" 
-                        id="duration" 
-                        name="duration"
-                        placeholder="e.g. 45"
-                        min="1"
-                        required
-                    >
+
+                    
+                <div class="duration-group">
+                    <label>Duration</label>
+                    <div class="time-inputs">
+                        <input
+                            type="number"
+                            id="hours"
+                            name="hours"
+                            placeholder="Hours"
+                            min="0"
+                        >
+                        <input
+                            type="number"
+                            id="minutes"
+                            name="minutes"
+                            placeholder="Minutes"
+                            min="0"
+                            max="59"
+                        >
+                    </div>
+                    <p id="duration-error"></p>
                 </div>
 
                 <button type="submit">+ Add Session</button>
@@ -67,30 +79,7 @@
         <section>
             <h2>Today's Sessions</h2>
 
-            <div id="sessions-list">
-
-                <!-- Session 1 -->
-                <article class="session-card">
-                    <h3>📘 Data Structures</h3>
-                    <p>Sorting Algorithms</p>
-                    <span>45 minutes</span>
-                </article>
-
-                <!-- Session 2 -->
-                <article class="session-card">
-                    <h3>☕ Java</h3>
-                    <p>JDBC Basics</p>
-                    <span>30 minutes</span>
-                </article>
-
-                <!-- Session 3 -->
-                <article class="session-card">
-                    <h3>💻 Web Development</h3>
-                    <p>JavaScript Basics</p>
-                    <span>40 minutes</span>
-                </article>
-
-            </div>
+            <div id="sessions-list"></div>
         </section>
 
 
@@ -98,7 +87,7 @@
         <section>
             <h2>Total Study Time</h2>
 
-            <p id="total-time">1h 55m</p>
+            <p id="total-time">0m</p>
         </section>
 
     </main>
@@ -109,5 +98,6 @@
         <p>StudySprint © 2026</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
